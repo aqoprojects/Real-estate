@@ -26,186 +26,258 @@ const HousesPage = () => {
     return (
         <>
             <HeaderComponent />
-            <main>
+            <main className='px-2'>
                 <article>
                     <section className='space-y-8'>
-                        <div className='px-25 space-y-4'>
+                        <div className='lg:px-25 sm:px-10 space-y-4'>
                             <h1 className='font-bold text-3xl '>Search for an offer</h1>
-                            <div className='flex items-stretch w-full gap-3'>
-                                <div className='flex-1 flex items-center-safe gap-5'>
-                                    <div className='flex-1'>
+                            <div className="w-full">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:items-stretch gap-3 w-full">
+
+                                    {/* Location */}
+                                    <div className="lg:flex-1">
                                         <InputField1
                                             showDefault={false}
-                                            icons={{ icon1: { icon: CiLocationOn, iconStyle: '!size-6', extra: 'flex justify-center items-center-safe' } }}
-                                            styles={{ input1: 'w-full' }}
-                                            texts={{ placeholder1: 'Search of location' }}
-                                            extra={'rounded-sm !w-full  py-2 !m-0 !justify-start'}
+                                            icons={{
+                                                icon1: {
+                                                    icon: CiLocationOn,
+                                                    iconStyle: "!size-6",
+                                                    extra: "flex justify-center items-center-safe",
+                                                },
+                                            }}
+                                            styles={{ input1: "w-full" }}
+                                            texts={{ placeholder1: "Search of location" }}
+                                            extra="rounded-sm !w-full py-2 !m-0 !justify-start"
                                         />
                                     </div>
 
+                                    {/* Property Type */}
+                                    <div className="lg:flex-1">
+                                        <InputField1
+                                            showDefault={false}
+                                            texts={{ placeholder1: "Property type" }}
+                                            icons={{ icon2: { icon: IoIosArrowDown } }}
+                                            styles={{ input1: "w-full" }}
+                                            extra="rounded-sm py-2 !m-0 px-3 !w-full"
+                                        />
+                                    </div>
 
-                                    <InputField1
-                                        showDefault={false}
-                                        texts={{ placeholder1: 'Property type' }}
-                                        icons={{ icon2: { icon: IoIosArrowDown } }}
-                                        styles={{ input1: 'w-35', }}
-                                        extra={'rounded-sm py-2 !m-0 px-3 w-50'}
-                                    />
-                                    <InputField1
-                                        showDefault={false}
-                                        texts={{ placeholder1: 'Bedrooms' }}
-                                        icons={{ icon2: { icon: IoIosArrowDown } }}
-                                        styles={{ input1: 'w-35', }}
-                                        extra={'rounded-sm py-2 !m-0 px-3 w-50'}
-                                    />
-                                    <InputField1
-                                        showDefault={false}
-                                        texts={{ placeholder1: 'Select price' }}
-                                        icons={{ icon2: { icon: IoIosArrowDown } }}
-                                        styles={{ input1: 'w-35', }}
-                                        extra={'rounded-sm py-2 !m-0 px-3 w-50'}
-                                    />
+                                    {/* Bedrooms */}
+                                    <div className="lg:flex-1">
+                                        <InputField1
+                                            showDefault={false}
+                                            texts={{ placeholder1: "Bedrooms" }}
+                                            icons={{ icon2: { icon: IoIosArrowDown } }}
+                                            styles={{ input1: "w-full" }}
+                                            extra="rounded-sm py-2 !m-0 px-3 !w-full"
+                                        />
+                                    </div>
+
+                                    {/* Price */}
+                                    <div className="lg:flex-1">
+                                        <InputField1
+                                            showDefault={false}
+                                            texts={{ placeholder1: "Select price" }}
+                                            icons={{ icon2: { icon: IoIosArrowDown } }}
+                                            styles={{ input1: "w-full" }}
+                                            extra="rounded-sm py-2 !m-0 px-3 !w-full"
+                                        />
+                                    </div>
+
+                                    {/* Search */}
+                                    <div className="md:col-span-2 lg:col-span-1 lg:w-35">
+                                        <Button1
+                                            showDefault={false}
+                                            icons={{ icon1: IoSearchOutline }}
+                                            texts={{ text1: "Search" }}
+                                            extra="bg-teal-500 rounded-sm !w-full justify-center lg:!w-35"
+                                        />
+                                    </div>
                                 </div>
-                                <Button1
-                                    showDefault={false}
-                                    icons={{ icon1: IoSearchOutline }}
-                                    texts={{ text1: 'Search' }}
-                                    extra={'bg-teal-500 rounded-sm !w-35 justify-center'}
-                                />
                             </div>
+
+
                         </div>
 
                         <DropdownLine1 extra={'h-[px] w-1 bg-black/10 w-full'} />
 
                     </section>
-                    <section className='px-25 pt-8 pb-20 space-y-8'>
-                        <div className='flex items-center-safe justify-between'>
-                            <p>1452 results found</p>
+                    <section className='px-3 md:px-25 pt-8 pb-20 space-y-8'>
+                        <div className="flex items-center justify-between gap-3 w-full">
+                            <p className="shrink-0">
+                                1452 results found
+                            </p>
+
                             <InputField1
                                 showDefault={false}
-                                texts={{ placeholder1: 'Sort by' }}
+                                texts={{ placeholder1: "Sort by" }}
                                 icons={{ icon2: { icon: IoIosArrowDown } }}
-                                styles={{ input1: '!w-20 !pr-1', }}
-                                extra={'rounded-sm py-2 !m-0 px-3 w-50'}
+                                styles={{ input1: "!w-full !pr-1" }}
+                                extra="rounded-sm py-2 !m-0 px-3 !w-[clamp(120px,20vw,200px)]"
                             />
                         </div>
 
-                        <div className='flex gap-5 flex-wrap'>
 
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house5} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Bright and airy 2-bedroom flat near the city center</p>
-                                    <p className='text-teal-500 font-bold text-sm'>320 000$</p>
-                                    <p className='text-black/70'>Barcelona IV</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house6} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Exclusive 5-room residence with a rooftop terrace</p>
-                                    <p className='text-teal-500 font-bold text-sm'>495 000$</p>
-                                    <p className='text-black/70'>Barcelona I.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house7} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Newly built 4-room apartment with premium finishes</p>
-                                    <p className='text-teal-500 font-bold text-sm'>390 000$</p>
-                                    <p className='text-black/70'>Madrid III.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house8} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Charming 2-bedroom flat in a prime urban area</p>
-                                    <p className='text-teal-500 font-bold text-sm'>215 000$</p>
-                                    <p className='text-black/70'>Barcelona VII.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house9} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house10} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Modern 4-bedroom condo with luxurious details</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house11} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house12} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house13} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house14} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house15} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
 
-
-                            <figure className='bg-white w-110 shadow-black/20 shadow-sm'>
-                                <img src={house16} alt="house1" className='w-full rounded-t-sm' />
-                                <figcaption className='p-3'>
-                                    <p className='font-bold'>Prestigious 5-bedroom home with a panoramic rooftop</p>
-                                    <p className='text-teal-500 font-bold text-sm'>450 000$</p>
-                                    <p className='text-black/70'>Madrid II.</p>
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house5} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Bright and airy 2-bedroom flat near the city center
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">320 000$</p>
+                                    <p className="text-black/70">Barcelona IV</p>
                                 </figcaption>
                             </figure>
+
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house6} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Exclusive 5-room residence with a rooftop terrace
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">495 000$</p>
+                                    <p className="text-black/70">Barcelona I.</p>
+                                </figcaption>
+                            </figure>
+
+                            <figure className="bg-white w-full shadow-black/20 shadow-sm">
+                                <img src={house7} alt="house1" className="w-full rounded-t-sm" />
+                                <figcaption className="p-3">
+                                    <p className="font-bold">
+                                        Newly built 4-room apartment with premium finishes
+                                    </p>
+                                    <p className="text-teal-500 font-bold text-sm">390 000$</p>
+                                    <p className="text-black/70">Madrid III.</p>
+                                </figcaption>
+                            </figure>
+
+                            {/* ...rest of your figures */}
+
                         </div>
+
                         <div className='flex justify-center w-full gap-3'>
 
                             <Button1
@@ -218,7 +290,7 @@ const HousesPage = () => {
                     </section>
                 </article>
             </main>
-            <FooterComponent/>
+            <FooterComponent />
         </>
     )
 }
